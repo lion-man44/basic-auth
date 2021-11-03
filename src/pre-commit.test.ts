@@ -5,8 +5,7 @@ Deno.test({
   name: "#run",
   fn: () => {
     const hook = new PreCommit();
-    hook.rm();
-    hook.run();
+    if (!hook.isFileCheck) hook.run();
     assertEquals(hook.isFileCheck(), true);
   },
 });

@@ -6,7 +6,6 @@ I wanted to try the `deno bundle`.
 
 ```sh
 # Please move your project root
-# When using github content
 deno bundle --unstable https://deno.land/x/pre_commit/mod.ts pre-commit.js
 deno run -A pre-commit.js
 rm pre-commit.js
