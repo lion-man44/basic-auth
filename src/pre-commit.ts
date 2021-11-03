@@ -13,7 +13,7 @@ export class PreCommit {
     this.#filename = self.filename || ".pre-commit";
     this.#defaultCommand = `#! /bin/sh
 
-deno lint && deno fmt && deno test
+deno lint && deno test
 `;
 
     this.#hookFile = ".git/hooks/pre-commit";
