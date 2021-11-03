@@ -8,6 +8,5 @@ Deno.test({
     hook.rm();
     hook.run();
     assertEquals(hook.isFileCheck(), true);
-    hook.rm();
   },
 });
