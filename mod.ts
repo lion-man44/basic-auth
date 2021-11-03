@@ -1,3 +1,8 @@
 import { PreCommit } from './src/pre-commit.ts';
 
-(new PreCommit).run()
+const hook = new PreCommit
+// hook.rm()
+
+if (!hook.isFileCheck()) hook.createHookFile();
+
+hook.run()
