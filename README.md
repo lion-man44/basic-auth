@@ -4,7 +4,10 @@ I wanted to try the `deno bundle`.
 ## Usage
 
 ```sh
-There is no install method yet
+# Please move your project root
+# When using github content
+deno bundle --unstable https://raw.githubusercontent.com/lion-man44/pre-commit/main/mod.ts pre-commit.js
+deno run -A pre-commit.js
 ```
 
 If you get this error, you should create `*.test.ts` file on your project.
