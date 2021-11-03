@@ -1,7 +1,7 @@
 import { existsSync } from "https://deno.land/std/fs/mod.ts";
 
 interface PreCommitConstructor {
-  filename?: string
+  filename?: string;
 }
 
 export class PreCommit {
@@ -10,37 +10,42 @@ export class PreCommit {
   #hookFile: string;
 
   constructor(self: PreCommitConstructor = {}) {
-    this.#filename = self.filename || '.pre-commit';
+    this.#filename = self.filename || ".pre-commit";
     this.#defaultCommand = `#! /bin/sh
 
-deno fmt --check && deno lint && deno test
-`
+deno lint && deno fmt && deno test
+`;
 
-    this.#hookFile = '.git/hooks/pre-commit'
+    this.#hookFile = ".git/hooks/pre-commit";
   }
 
   private isHookFile() {
-    return existsSync(this.#hookFile)
+    return existsSync(this.#hookFile);
   }
 
   private isProjectFile() {
-    return existsSync(this.#filename)
+    return existsSync(this.#filename);
   }
 
   isFileCheck() {
-    return this.isHookFile() || this.isProjectFile()
+    return this.isHookFile() || this.isProjectFile();
   }
 
   createHookFile() {
-    Deno.writeTextFileSync(this.#filename, this.#defaultCommand)
+    Deno.writeTextFileSync(this.#filename, this.#defaultCommand, {
+      mode: 0o755,
+    });
   }
 
   rm() {
-    if (existsSync(this.#filename)) Deno.removeSync(this.#filename)
-    if (existsSync(this.#hookFile)) Deno.removeSync(this.#hookFile)
+    if (existsSync(this.#filename)) Deno.removeSync(this.#filename);
+    if (existsSync(this.#hookFile)) Deno.removeSync(this.#hookFile);
   }
 
   run() {
-    Deno.symlinkSync(`${Deno.env.get('PWD')}/${this.#filename}`, this.#hookFile)
+    Deno.symlinkSync(
+      `${Deno.env.get("PWD")}/${this.#filename}`,
+      this.#hookFile,
+    );
   }
 }
