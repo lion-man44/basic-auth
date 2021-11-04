@@ -1,0 +1,22 @@
+{
+  "$schema": "https://x.nest.land/eggs@0.3.9/src/schema.json",
+  "name": "pre_commit",
+  "entry": "./mod.ts",
+  "description": "Create pre-commit file",
+  "homepage": "https://github.com/lion-man44/pre_commit",
+  "version": "0.1.2",
+  "releaseType": "patch",
+  "unstable": true,
+  "unlisted": false,
+  "files": [
+    "mod.ts",
+    "src/**/*.ts",
+    "README.md",
+    "LICENSE"
+  ],
+  "ignore": [],
+  "checkFormat": false,
+  "checkTests": false,
+  "checkInstallation": false,
+  "check": true
+}
