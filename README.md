@@ -1,3 +1,8 @@
+# pre_commit
+
+[![tag](https://img.shields.io/github/release/lion-man44/pre_commit)](https://github.com/lion-man44/pre_commit/releases)
+[![license](https://img.shields.io/github/license/lion-man44/pre_commit)](https://github.com/lion-man44/pre_commit/blob/master/LICENSE)
+
 This is meaningless tool :)
 
 I wanted to try the `deno bundle`.

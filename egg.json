@@ -4,7 +4,7 @@
   "entry": "./mod.ts",
   "description": "Create pre-commit file",
   "homepage": "https://github.com/lion-man44/pre_commit",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "releaseType": "patch",
   "unstable": true,
   "unlisted": false,
